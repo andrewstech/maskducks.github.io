@@ -15,11 +15,7 @@ jobs:
 
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          # extended: true
+      - run: wget https://github.com/gohugoio/hugo/releases/download/v0.100.1/hugo_0.100.1_Linux-64bit.deb &&sudo apt install hugo_0.100.1_Linux-64bit.deb 
 
       
 
