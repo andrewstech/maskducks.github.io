@@ -8,17 +8,17 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
         with:
 
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - run: wget https://github.com/gohugoio/hugo/releases/download/v0.100.1/hugo_0.100.1_Linux-64bit.deb && sudo dpkg -i hugo_0.100.1_Linux-64bit.deb && sudo apt-get -f install 
-
-      
-
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
 
       - name: Build
         run: hugo
